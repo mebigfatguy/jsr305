@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>javax.annotations</groupId>
+	<artifactId>jsr305</artifactId>
+	<packaging>jar</packaging>
+	<version>0.1.0</version>
+	
+	<parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>5</version>
+    </parent>
+    
+    <name>jsr305</name>
+    <description>java annotations from jsr305</description>
+    
+    <scm>
+        <connection>scm:git:https://github.com/mebigfatguy/jsr305/</connection>
+        <developerConnection>scm:git:https://github.com/mebigfatguy/jsr305/</developerConnection>
+        <url>https://github.com/mebigfatguy/jsr305/</url>
+    </scm>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.build.timestamp.format>E MMM d hh:mm:ss yyyy XX</maven.build.timestamp.format>
+    </properties>
+    
+    <build>
+	    <pluginManagement>
+            <plugins>
+                <plugin><artifactId>maven-compiler-plugin</artifactId></plugin>
+            </plugins>
+	    </pluginManagement>
+
+	    <plugins>
+	        <plugin>
+	            <artifactId>maven-compiler-plugin</artifactId>
+	            <configuration>
+	                <compilerArgument>-Xlint</compilerArgument>
+	                <source>1.8</source>
+	                <target>1.8</target>
+	            </configuration>
+	        </plugin>
+	    </plugins>
+	</build>
+</project>
