@@ -17,24 +17,28 @@ public @interface Nonnegative {
 
     class Checker implements TypeQualifierValidator<Nonnegative> {
 
+        @Override
         public When forConstantValue(Nonnegative annotation, Object v) {
-            if (!(v instanceof Number))
+            if (!(v instanceof Number)) {
                 return When.NEVER;
+            }
             boolean isNegative;
             Number value = (Number) v;
-            if (value instanceof Long)
+            if (value instanceof Long) {
                 isNegative = value.longValue() < 0;
-            else if (value instanceof Double)
+            } else if (value instanceof Double) {
                 isNegative = value.doubleValue() < 0;
-            else if (value instanceof Float)
+            } else if (value instanceof Float) {
                 isNegative = value.floatValue() < 0;
-            else
+            } else {
                 isNegative = value.intValue() < 0;
+            }
 
-            if (isNegative)
+            if (isNegative) {
                 return When.NEVER;
-            else
+            } else {
                 return When.ALWAYS;
+            }
 
         }
     }

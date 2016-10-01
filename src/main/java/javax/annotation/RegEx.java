@@ -11,9 +11,8 @@ import javax.annotation.meta.TypeQualifierValidator;
 import javax.annotation.meta.When;
 
 /**
- * This qualifier is used to denote String values that should be a Regular
- * expression.
- * 
+ * This qualifier is used to denote String values that should be a Regular expression.
+ *
  */
 @Documented
 @Syntax("RegEx")
@@ -24,9 +23,11 @@ public @interface RegEx {
 
     static class Checker implements TypeQualifierValidator<RegEx> {
 
+        @Override
         public When forConstantValue(RegEx annotation, Object value) {
-            if (!(value instanceof String))
+            if (!(value instanceof String)) {
                 return When.NEVER;
+            }
 
             try {
                 Pattern.compile((String) value);

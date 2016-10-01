@@ -19,10 +19,12 @@ public @interface MatchesPattern {
     int flags() default 0;
 
     static class Checker implements TypeQualifierValidator<MatchesPattern> {
+        @Override
         public When forConstantValue(MatchesPattern annotation, Object value) {
             Pattern p = Pattern.compile(annotation.value(), annotation.flags());
-            if (p.matcher(((String) value)).matches())
+            if (p.matcher(((String) value)).matches()) {
                 return When.ALWAYS;
+            }
             return When.NEVER;
         }
 
