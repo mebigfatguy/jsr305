@@ -18,6 +18,13 @@
     <name>jsr305</name>
     <description>java annotations from jsr305</description>
     
+    <licenses>
+        <license>
+            <name>Apache 2 License</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+    
     <scm>
         <connection>scm:git:https://github.com/mebigfatguy/jsr305/</connection>
         <developerConnection>scm:git:https://github.com/mebigfatguy/jsr305/</developerConnection>
